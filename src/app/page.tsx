@@ -1,95 +1,90 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
+import React from 'react'
+import ImageSlider from './components/ImageSlider'
+import MyProfile from './MyProfile/page'
+import { Box, Link, Typography, useMediaQuery } from '@mui/material'
+import BookCard from './components/BookCard'
+import BookletCard from './components/BookletCard'
+import SearchDropdown from './components/SearchDropdown'
+import SideComponent from './components/SideComponent'
+import SideComponentTwo from './components/SideComponentTwo'
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+const HomePage = () => {
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    const matches = useMediaQuery("(min-width:600px)");
+    return (
+        <Box sx={{ backgroundColor: "#FEFCEA" }}>
+            <Box sx={{ display: "flex", justifyContent: "space-between", alignContent: "center" }}>
+                <Typography variant="h6" p={2} sx={{ fontSize: "small" }}>
+                    <b>Home /</b>
+                </Typography>
+                <Box p={2}>
+                    <SearchDropdown />
+                </Box>
+            </Box>
+            <ImageSlider />
+            <Box sx={{ display: "flex", justifyContent: "center", gap: 5, flexWrap: "wrap" }}>
+                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                    <Box>
+                        <Box sx={{ display: "flex", justifyContent: !matches ? "center" : "flex-start", gap: 3 }}>
+                            <Typography variant="h6" mb={2} mt={5} sx={{ fontWeight: "bold", textDecoration: 'underline' }}>
+                                Article
+                            </Typography>
+                        </Box>
+                        <Box sx={{ display: "flex", justifyContent: "center", gap: 5, flexWrap: "wrap" }}>
+                            {[...Array(3)].map((_, index) => (
+                                <MyProfile key={index} />
+                            ))}
+                        </Box>
+                        <Typography sx={{ display: "flex", justifyContent: !matches ? "center" : "end", fontWeight: "bold" ,mt:2}}>
+                            <Link href="/ArticleCardsPage" color="inherit" sx={{textDecoration:'none',fontFamily:'Times New Roman'}}>
+                                See More ...
+                            </Link>
+                        </Typography>
+                    </Box>
+                    <Box>
+                        <Box sx={{ display: "flex", justifyContent: !matches ? "center" : "flex-start", gap: 3 }}>
+                            <Typography variant="h6" mb={5} sx={{ fontWeight: "bold", textDecoration: 'underline' }}>
+                                Books
+                            </Typography>
+                        </Box>
+                        <Box sx={{ display: "flex", justifyContent: "center", gap: 5, flexWrap: "wrap" }}>
+                            {[...Array(3)].map((_, index) => (
+                                <BookCard key={index} />
+                            ))}
+                        </Box>
+                        <Typography sx={{ display: "flex", justifyContent: !matches ? "center" : "end", fontWeight: "bold" }}>
+                            <Link href="/BookHomePage" color="inherit"sx={{textDecoration:'none',fontFamily:'Times New Roman'}}>
+                                See More ...
+                            </Link>
+                        </Typography>
+                    </Box>
+                    <Box>
+                        <Box sx={{ display: "flex", justifyContent: !matches ? "center" : "flex-start", gap: 3 }}>
+                            <Typography variant="h6" mb={5} mt={2} sx={{ fontWeight: "bold", textDecoration: 'underline' }}>
+                                Booklets
+                            </Typography>
+                        </Box>
+                        <Box sx={{ display: "flex", justifyContent: "center", gap: 5, flexWrap: "wrap" }}>
+                            {[...Array(3)].map((_, index) => (
+                                <BookletCard key={index} />
+                            ))}
+                        </Box>
+                        <Typography sx={{ display: "flex", justifyContent: !matches ? "center" : "end", fontWeight: "bold", mb: 5 }}>
+                            <Link href="/BookletCardsPage" color="inherit"sx={{textDecoration:'none',fontFamily:'Times New Roman'}}>
+                                See More ...
+                            </Link>
+                        </Typography>
+                    </Box>
+                </Box>
+                <Box sx={{ display: "flex", flexDirection: "column", gap: 15, mt: !matches ? 0 : 12 }}>
+                    <SideComponent />
+                    <SideComponentTwo />
+                </Box>
+            </Box>
+        </Box>
+    );
+};
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+export default HomePage;
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
-}
