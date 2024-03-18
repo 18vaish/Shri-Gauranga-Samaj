@@ -9,7 +9,7 @@ function Reset_pass() {
                     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
                         <Box sx={{ mt: 15, fontWeight:"bold"}}>
                             <h2>&nbsp;&nbsp;&nbsp;Reseat Your Password</h2>
-                            <h4 style={{ color: "#686760",  marginTop: 20, marginBottom:20}}>Don't worry! It occurs. Please enter the <br />
+                            <h4 style={{ color: "#686760",  marginTop: 20, marginBottom:20}}>Do not worry! It occurs. Please enter the <br />
                                 email address linked with your account</h4>
                         </Box>
                         <Box>

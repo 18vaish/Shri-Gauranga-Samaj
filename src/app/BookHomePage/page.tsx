@@ -28,6 +28,23 @@ const BookHomePage = () => {
                     <Section title="Featured" />
                     <Section title="Popular" />
                     <Section title="Recent" />
+                    <Box display="flex" alignItems="center" justifyContent="center" mt={matches ? 5 : 5}>
+                        <Button variant="outlined" onClick={handleClickBookCardsPage} sx={{
+                            border: "1px solid black",
+                            color: "white",
+                            backgroundColor: "#81311A",
+                            p: 1, mb: 2,
+                            borderRadius: 3,
+                            width: "110px",
+                            fontWeight: "bold",
+                            '&:hover': {
+                                backgroundColor: "#81311A",
+                                border: "2px solid black"
+                            }
+                        }}>
+                            Load More
+                        </Button>
+                    </Box>
                 </Box>
                 <Box display="flex" flexDirection="column" gap={10} mt={matches ? 5 : 0}>
                     <TopicTwo />
@@ -41,7 +58,7 @@ const BookHomePage = () => {
 
 const Section = ({ title }: { title: string }) => (
     <Box>
-        <Typography variant="h6" sx={{ fontWeight: "bold", justifyContent:'flex-start' ,mr:5}}>
+        <Typography variant="h6" sx={{ fontWeight: "bold", justifyContent:'flex-start' ,ml:2}}>
             {title}
         </Typography>
         <Box display="flex" justifyContent="center" gap={5} flexWrap="wrap" m={2}>

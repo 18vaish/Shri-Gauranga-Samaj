@@ -26,11 +26,12 @@ const ArticlePage = () => {
             <FilterBar />
             <Box display="flex" justifyContent="center" gap={5} flexWrap="wrap" >
                 <Box display="flex" flexDirection="column">
-                    <Section title="Featured" />
-                    <Section title="Popular" />
-                    <Section title="Recent" />
+                    <Section title={''}  />
+                    <Section  title={''}  />
+                    <Section  title={''}  />
+                    <Section  title={''}  />
                 </Box>
-                <Box display="flex" flexDirection="column" gap={10} mt={matches ? 5 : 0}>
+                <Box display="flex" flexDirection="column" gap={10} >
                     <TopicTwo />
                     <RESVisitedArticle />
                 </Box>

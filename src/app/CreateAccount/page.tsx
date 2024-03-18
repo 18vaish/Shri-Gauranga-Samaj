@@ -1,12 +1,22 @@
+"use client"
 import { Box, Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
+import { useRouter } from "next/navigation";
 
-function Create_account() {
+function CreateAccount() {
+
+    const router = useRouter();
+  
+    
+    const handleclickRegistration=() => {
+        router.push('/Registration')
+    }
+
     return (
         <Box sx={{ display: "flex", width: "100%", height: "100vh", backgroundColor: "#FEFCEA" }}>
             <Box sx={{ display: "flex", width: "100%", height: "5vh", backgroundColor: "#81311A", justifyContent: "center" }}>
-                <Box sx={{ display: "flex", width: "500px", height: "500px", alignItems: "center", mt: "20%", justifyContent: "center" }}>
+                <Box sx={{ display: "flex", width: "500px", height: "500px", alignItems: "center", mt: "10%", justifyContent: "center" }}>
                     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                        <Box sx={{ mt: 5 }}>
+                        <Box>
                             <h2><b>Welcome to Gauranga <br />
                                 Samaj Community</b></h2>
                         </Box>
@@ -18,13 +28,15 @@ function Create_account() {
                         <Box>
                             <TextField id="outlined-basic" label="Email" type="email" variant="outlined" size="small" sx={{ border: "3px solid", mt: 1, mb: 5, borderRadius: 3, width: "350px" }} /><br />
                             <TextField id="outlined-basic" type="password" label="Password" variant="outlined" size="small" sx={{ border: "3px solid", mb: 5, borderRadius: 3, width: "350px" }} /><br />
-                            <Button variant="outlined" sx={{ border: "3px solid", color: "black", p: 1, mb: 5, borderRadius: 3, width: "360px" }}><b>Log in</b></Button>
+                            <Button variant="outlined" 
+                            onClick={handleclickRegistration}
+                            sx={{ border: "3px solid", color: "black", p: 1, mb: 5, borderRadius: 3, width: "360px", fontWeight:"bold" ,'&:hover': { backgroundColor: '#81311A', border: '3px solid', color: 'white' } }}>Log in</Button>
                         </Box>
                         <Box>
                             <FormControlLabel control={<Checkbox />} sx={{ color: "#686760" }} label="Remember me for 30 days" />
                         </Box>
-                        <Box sx={{ mt: 2 }}>
-                            <a href="#">
+                        <Box sx={{ mt: 2, mb:3}}>
+                            <a href="/EnterCode">
                                 <u>
                                     Forgot Password?
                                 </u>
@@ -42,4 +54,4 @@ function Create_account() {
     );
 }
 
-export default Create_account;
+export default CreateAccount;

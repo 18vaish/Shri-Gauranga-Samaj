@@ -25,11 +25,29 @@ const BookHomePage = () => {
             <FilterBar />
             <Box display="flex" justifyContent="center" gap={5} flexWrap="wrap" >
                 <Box display="flex" flexDirection="column">
-                    <Section title="Featured" />
-                    <Section title="Popular" />
-                    <Section title="Recent" />
+                    <Section title={''}  />
+                    <Section title={''}  />
+                    <Section title={''} />
+                    <Section title={''} />
+                    <Box display="flex" alignItems="center" justifyContent="center" mt={matches ? 5 : 5}>
+                        <Button variant="outlined" onClick={handleClickBookCardsPage} sx={{
+                            border: "1px solid black",
+                            color: "white",
+                            backgroundColor: "#81311A",
+                            p: 1, mb: 2,
+                            borderRadius: 3,
+                            width: "110px",
+                            fontWeight: "bold",
+                            '&:hover': {
+                                backgroundColor: "#81311A",
+                                border: "2px solid black"
+                            }
+                        }}>
+                            Load More
+                        </Button>
+                    </Box>
                 </Box>
-                <Box display="flex" flexDirection="column" gap={10} mt={matches ? 5 : 0}>
+                <Box display="flex" flexDirection="column" gap={10} >
                     <TopicTwo />
                     <RESVisitedArticle />
                 </Box>

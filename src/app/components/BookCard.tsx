@@ -33,8 +33,8 @@ function BookCard() {
                 </CardContent>
                
                     <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", p: 1, marginTop: -3 }}>
-                        <Typography variant="h6" sx={{ fontSize: "10px", color: "gray" }}>
-                            12 Jan 2024
+                        <Typography variant="h6" color="text.secondary" sx={{ fontSize: "10px"}}>
+                        {new Date().toLocaleDateString()} 
                         </Typography>
                         <Button
                             onClick={handleClickBookDetails}

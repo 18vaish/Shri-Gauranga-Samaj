@@ -48,8 +48,8 @@ const MediaCard = () => {
                     </Typography>
                 </CardContent>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: -5 }}>
-                    <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.6rem' }}>
-                        {new Date().toLocaleDateString()} {/* Dynamic date */}
+                    <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.6rem' ,ml:1}}>
+                        {new Date().toLocaleDateString()} 
                     </Typography>
                     <IconButton aria-label="share" onClick={handleShareClick}>
                         <ShareIcon sx={{ color: '#562000' }} />
