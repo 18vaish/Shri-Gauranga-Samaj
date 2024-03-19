@@ -24,14 +24,14 @@ function BookCard() {
                   />
               </Box>
               <CardContent>
-                  <Typography sx={{ fontWeight: "bold", justifyContent: 'flex-start', ml: -1 }}>
+                  <Typography sx={{ fontWeight: "bold", justifyContent: 'flex-start', ml: '-0.5em' }}>
                       Bhagvad Gita-As it is
                   </Typography>
-                  <Typography variant="h6" sx={{ fontSize: "10px", color: "gray", ml: -1 }}>
+                  <Typography variant="h6" sx={{ fontSize: "10px", color: "gray", ml: '-0.6em'}}>
                       By Srila Prabhupad
                   </Typography>
               </CardContent>
-              <Stack direction="row" justifyContent="space-between" alignItems="flex-end" p={1} mt={-3}>
+              <Stack direction="row" justifyContent="space-between" alignItems="flex-end" p={1} mt={'-1.5em'}>
                   <Typography variant="h6" sx={{ fontSize: "10px", color: "gray" }}>
                       12 Jan 2024
                   </Typography>

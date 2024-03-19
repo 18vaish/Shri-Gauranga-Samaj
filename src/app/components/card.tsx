@@ -40,14 +40,14 @@ const MediaCard = () => {
                     sx={{ borderRadius: 2 }}
                 />
                 <CardContent>
-                    <Typography fontSize="large" fontWeight="bold" gutterBottom sx={{ mt: -2, color: 'black' }}>
+                    <Typography fontSize="large" fontWeight="bold" gutterBottom sx={{ mt: '-0.5em',  color: 'black' }}>
                         RadhaKrishna are one soul
                     </Typography>
                     <Typography variant="body2" color="black" sx={{ fontSize: '0.8rem' }}>
                         The nature of the KC is such that it can help us to understand...
                     </Typography>
                 </CardContent>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: -5 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '-1em' }}>
                     <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.6rem' ,ml:1}}>
                         {new Date().toLocaleDateString()} 
                     </Typography>

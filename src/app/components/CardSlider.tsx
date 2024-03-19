@@ -70,15 +70,15 @@ const CardSlider = () => {
                                         alt={booklet.name}
                                     />
                                     <CardContent>
-                                        <Typography fontSize="large" fontWeight="bold" gutterBottom sx={{ mt: -2, color: 'black' }}>
+                                        <Typography fontSize="large" fontWeight="bold" gutterBottom sx={{ mt: '-1em', color: 'black' }}>
                                             {booklet.name}
                                         </Typography>
                                         <Typography variant="body2" color="black" sx={{ fontSize: '0.8rem' }}>
                                             {booklet.information}
                                         </Typography>
                                     </CardContent>
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: -5 }}>
-                                        <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.6rem' }}>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '-1em' }}>
+                                        <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.6rem' ,marginLeft:'8px'}}>
                                             {new Date().toLocaleDateString()} {/* Dynamic date */}
                                         </Typography>
                                         <IconButton aria-label="share" onClick={handleShareClick}>
